@@ -1,0 +1,64 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static List<Integer> findCommonElements(int[] arr1, int[] arr2, int[] arr3) {
+        List<Integer> commonElements = new ArrayList<>();
+
+        int i = 0, j = 0, k = 0;
+
+        while (i < arr1.length && j < arr2.length && k < arr3.length) {
+            if (arr1[i] == arr2[j] && arr2[j] == arr3[k]) {
+                commonElements.add(arr1[i]);
+                i++;
+                j++;
+                k++;
+            }
+            else if (arr1[i] < arr2[j]) {
+                i++;
+            }
+            else if (arr2[j] < arr3[k]) {
+                j++;
+            }
+            else {
+                k++;
+            }
+        }
+        return commonElements;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int n3 = sc.nextInt();
+
+        int a[] = new int[n1];
+        int b[] = new int[n2];
+        int c[] = new int[n3];
+
+        for (int i = 0; i < n1; i++) {
+            a[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n2; i++) {
+            b[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n3; i++) {
+            c[i] = sc.nextInt();
+        }
+
+        List<Integer> common = findCommonElements(a, b, c);
+
+        for (int x : common) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+
+        sc.close();
+    }
+}

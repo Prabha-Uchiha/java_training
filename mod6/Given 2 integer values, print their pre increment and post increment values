@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int preInca = ++a;
+        //int postInca = a++;
+        int postIncb= b++;
+        System.out.println("Pre increment:" + preInca);
+       //System.out.println(postInca);
+        System.out.println("Post increment:"+postIncb);
+        //System.out.println(postIncb);
+       System.out.println( "Final values:" +a+" "+ b);
+        //System.out.println(a + b);
+        
+        
+    }
+}

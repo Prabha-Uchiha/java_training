@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+     
+        
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        char[] arr = str.toCharArray();
+        int l=0;
+        int r=arr.length-1;
+        
+        while(l<r){
+            //char ch =arr[l];
+            if(Character.isLetterOrDigit(arr[l]) && Character.isLetterOrDigit(arr[r])){
+               char ch = arr[l];
+                arr[l] = arr[r];
+                arr[r]=  ch;
+                l++;
+                r--;
+            }
+            if(!Character.isLetterOrDigit(arr[l]))
+                l++;
+            if(!Character.isLetterOrDigit(arr[r]))
+                r--;
+            
+        }
+        
+        String s2 = new String(arr);
+        System.out.println(s2);
+        
+    }
+}
